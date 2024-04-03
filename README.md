@@ -58,4 +58,27 @@ Use o Gerenciador de pesquisa para escrever e testar consultas. O explorador de 
 
 1. Na página Visão geral do serviço de Pesquisa, selecione Gerenciador de pesquisa na parte superior da tela.
 2. Observe como o índice selecionado é o índice de café que você criou. Abaixo do índice selecionado, altere a exibição para JSON view.
-3. 
+3. No campo Editor de consultas JSON, copie e cole:
+
+Código
+{
+    "search": "*",
+    "count": true
+}
+Selecione Pesquisar. A consulta de pesquisa retorna todos os documentos no índice de pesquisa, incluindo uma contagem de todos os documentos no campo @odata.count. O índice de pesquisa deve retornar um documento JSON contendo os resultados da pesquisa.
+
+Agora vamos filtrar por localização. No campo Editor de consultas JSON, copie e cole:
+Código
+{
+ "search": "locations:'Chicago'",
+ "count": true
+}
+Selecione Pesquisar. A consulta pesquisa todos os documentos no índice e filtra por revisões com um local de Chicago. Você deve ver no campo.3@odata.count
+Agora vamos filtrar por sentimento. No campo Editor de consultas JSON, copie e cole:
+Código
+{
+ "search": "sentiment:'negative'",
+ "count": true
+}
+
+Selecione Pesquisar. A consulta pesquisa todos os documentos no índice e filtra por avaliações com um sentimento negativo. Você deve ver no campo.1@odata.count
